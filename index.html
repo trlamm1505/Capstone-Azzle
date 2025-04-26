@@ -1,29 +1,787 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Azzle</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Azzle</title>
 
-    <!-- Tailwind -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css"
-      rel="stylesheet"
-    />
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <!-- Font Google -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- css -->
-    <link rel="stylesheet" href="./css/style.css">
+  <!-- Flowbite  -->
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+
+  <!-- Animate -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <link rel="stylesheet" href="./css/style.css" />
 </head>
-<body>
+
+<body class="mt-10">
+  <div class="page-wrapper relative z-[1] bg-white">
+    <main class="main-wrapper relative overflow-hidden">
+      <!-- Funfact -->
+      <section id="funfact-section">
+        <div class="mx-auto max-w-[1500px] px-5">
+          <div id="funfact-grid" class="grid grid-cols-1 overflow-hidden rounded-[30px] bg-black lg:rounded-[50px] wow animate__animated animate__fadeIn">
+            <div class="relative overflow-hidden rounded-[30px] lg:rounded-[50px]">
+              <img src="./img/funfact-image.jpg" alt="funfact-image" width="721" height="784"
+                class="w-full object-cover object-center lg:h-[35rem] xl:h-full" />
+              <a data-fslightbox="gallery" href="https://www.youtube.com/watch?v=3nQNiWdeH2Q"
+                class="absolute left-1/2 top-1/2 z-[1] -translate-x-1/2 -translate-y-1/2">
+                <div
+                  class="relative flex h-[120px] w-[120px] items-center justify-center rounded-full border-[3px] border-black text-lg font-bold backdrop-blur-[2px] transition-all duration-300 hover:bg-red-600 hover:text-white">
+                  Play
+                  <div
+                    class="absolute -z-[1] h-[110%] w-[110%] animate-[ping_1.5s_ease-in-out_infinite] rounded-full bg-gray-600 opacity-30">
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div id="funFactRight"
+              class="self-center px-6 py-16 sm:py-20 md:px-16 xl:px-10 xl:py-24 xxl:py-32 xxl:pl-16 xxl:pr-28">
+              <div class="mb-8 lg:mb-10 xl:mb-2">
+                <h2 class="text-[#FFFFFF] leading-[1] pl-10 lg:text-[4.5rem] xl:text-[80px] xl:font-bold">
+                  AI-powered that streamline tasks
+                </h2>
+              </div>
+              <div class="pl-10 leading-[1.4] text-[#FFFFFF] lg:text-[22px]">
+                <p class="mb-7 last:mb-0">
+                  As your business grows or your AI SaaS needs change, you
+                  <br />
+                  can easily adjust your subscription level to match those
+                  needs. <br />
+                  This flexibility ensures that AI remains an asset.
+                </p>
+              </div>
+              <div class="my-14 h-[1px] w-[90%] ml-7 bg-[#1B1B1B]"></div>
+              <ul
+                class="flex flex-col ml-10 gap-x-11 gap-y-8 text-center sm:flex-row md:text-left xl:justify-normal xl:text-left xxl:gap-x-20">
+                <li>
+                  <h3 class="text-[120px] text-[#FE330A] font-bold">
+                    <span class="wow number__count">92</span>%
+                  </h3>
+                  <span class="block text-[21px] font-normal text-[#FFFFFF]">
+                    Customer service inquiries
+                  </span>
+                </li>
+                <li>
+                  <h3 class="text-[120px] text-[#FE330A] font-bold">
+                    <span class="wow number__count">75</span>%
+                  </h3>
+                  <span class="block text-[21px] font-normal text-[#FFFFFF]">
+                    Using financial institutions
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--Pridcing  -->
+      <section class="pricing-section">
+        <div class="pb-20 pt-20 xl:pb-[150px] xl:pt-[130px]">
+          <div class="global-container">
+            <div
+              class="mb-10 text-center lg:mb-12 jos jos-fade-up wow animate__animated animate__fadeInUp animate__delay-0.5s"
+              data-jos_once="1" data-jos_animation="fade-up" data-jos_counter="0" data-jos_scrolldirection="down">
+              <div class="mx-auto lg:max-w-2xl font-bold">
+                <h2>Cost-effectively build any software</h2>
+              </div>
+            </div>
+            <div class="container mx-auto">
+              <!-- Tab buttons -->
+              <div class="flex justify-center jos jos-fade wow animate__animated animate__fadeInUp animate__delay-0.5s"
+                data-jos_animation="fade" data-jos_once="1" data-jos_counter="0" data-jos_scrolldirection="down">
+                <div class="inline-flex space-x-4 rounded-[50px] border-2 border-black font-semibold">
+                  <button class="tab-button price-button active" data-tab="monthly">
+                    Monthly
+                  </button>
+                  <button class="tab-button price-button" data-tab="annually">
+                    Annually
+                  </button>
+                </div>
+              </div>
+
+              <!-- Pricing Block -->
+              <div class="mt-12 lg:mt-16 xl:mt-20">
+                <ul id="monthly" class="tab-content grid grid-cols-1 md:grid-cols-2 xxl:grid-cols-3 gap-6">
+                  <li
+                    class="group flex flex-col rounded-[10px] bg-[#EBE6DF] p-10 transition-all duration-300 ease-linear hover:bg-black jos jos-flip wow animate__animated animate__flipInY animate__faster"
+                    data-jos_animation="flip" data-jos_delay="0" data-jos_once="1" data-jos_counter="0"
+                    data-jos_scrolldirection="down">
+                    <h3
+                      class="font-dmSans text-[28px] font-bold leading-[1.28] tracking-tighter text-black transition-all duration-300 ease-linear group-hover:text-white">
+                      Beginner
+                    </h3>
+                    <span class="text-lg text-black transition-all duration-300 ease-linear group-hover:text-white">Up
+                      to 10 members</span>
+
+                    <div class="my-5 h-[1px] w-full bg-[#DBD6CF]"></div>
+                    <h4
+                      class="mb-4 font-dmSans text-5xl font-bold leading-none text-black transition-all duration-300 ease-linear group-hover:text-white md:text-6xl lg:text-7xl xl:text-[80px]">
+                      $25<span class="text-lg font-semibold">/Per month</span>
+                    </h4>
+                    <p class="mb-10 text-lg text-black transition-all duration-300 ease-linear group-hover:text-white">
+                      This is an excellent option for people &amp; small
+                      businesses who are starting out.
+                    </p>
+                    <a class="button custom-button mt-auto block rounded-[50px] border-2 border-black bg-transparent py-4 text-center text-black group-hover:border-[#FE330A] group-hover:text-white"
+                      href="/">Choose the plan</a>
+                  </li>
+                  <li
+                    class="group flex flex-col rounded-[10px] bg-[#EBE6DF] p-10 transition-all duration-300 ease-linear hover:bg-black jos jos-flip wow animate__animated animate__flipInY animate__faster"
+                    data-jos_animation="flip" data-jos_delay="0" data-jos_once="1" data-jos_counter="0"
+                    data-jos_scrolldirection="down">
+                    <h3
+                      class="font-dmSans text-[28px] font-bold leading-[1.28] tracking-tighter text-black transition-all duration-300 ease-linear group-hover:text-white">
+                      Starter
+                    </h3>
+                    <span class="text-lg text-black transition-all duration-300 ease-linear group-hover:text-white">Up
+                      to 50 members</span>
+
+                    <div class="my-5 h-[1px] w-full bg-[#DBD6CF]"></div>
+                    <h4
+                      class="mb-4 font-dmSans text-5xl font-bold leading-none text-black transition-all duration-300 ease-linear group-hover:text-white md:text-6xl lg:text-7xl xl:text-[80px]">
+                      $89<span class="text-lg font-semibold">/Per month</span>
+                    </h4>
+                    <p class="mb-10 text-lg text-black transition-all duration-300 ease-linear group-hover:text-white">
+                      This plan is suitable for e-commerce stores as well as
+                      professional blogs.
+                    </p>
+                    <a class="button custom-button mt-auto block rounded-[50px] border-2 border-black bg-transparent py-4 text-center text-black group-hover:border-[#FE330A] group-hover:text-white"
+                      href="/">Choose the plan</a>
+                  </li>
+                  <li
+                    class="group flex flex-col rounded-[10px] bg-[#EBE6DF] p-10 transition-all duration-300 ease-linear hover:bg-black jos jos-flip wow animate__animated animate__flipInY animate__faster"
+                    data-jos_animation="flip" data-jos_delay="0" data-jos_once="1" data-jos_counter="0"
+                    data-jos_scrolldirection="down">
+                    <h3
+                      class="font-dmSans text-[28px] font-bold leading-[1.28] tracking-tighter text-black transition-all duration-300 ease-linear group-hover:text-white">
+                      Pro
+                    </h3>
+                    <span class="text-lg text-black transition-all duration-300 ease-linear group-hover:text-white">Up
+                      to 100 members</span>
+
+                    <div class="my-5 h-[1px] w-full bg-[#DBD6CF]"></div>
+                    <h4
+                      class="mb-4 font-dmSans text-5xl font-bold leading-none text-black transition-all duration-300 ease-linear group-hover:text-white md:text-6xl lg:text-7xl xl:text-[80px]">
+                      $199<span class="text-lg font-semibold">/Per month</span>
+                    </h4>
+                    <p class="mb-10 text-lg text-black transition-all duration-300 ease-linear group-hover:text-white">
+                      Ideal for handling complicated projects enterprise-level
+                      projects, and websites.
+                    </p>
+                    <a class="button custom-button mt-auto block rounded-[50px] border-2 border-black bg-transparent py-4 text-center text-black group-hover:border-[#FE330A] group-hover:text-white"
+                      href="/">Choose the plan</a>
+                  </li>
+                </ul>
+                <ul id="annually" class="tab-content grid hidden grid-cols-1 gap-6 md:grid-cols-2 xxl:grid-cols-3">
+                  <li
+                    class="group flex flex-col rounded-[10px] bg-[#EBE6DF] p-10 transition-all duration-300 ease-linear hover:bg-black jos jos-flip wow animate__animated animate__flipInY animate__faster"
+                    data-jos_animation="flip" data-jos_delay="0" data-jos_once="1" data-jos_counter="0"
+                    data-jos_scrolldirection="down">
+                    <h3
+                      class="font-dmSans text-[28px] font-bold leading-[1.28] tracking-tighter text-black transition-all duration-300 ease-linear group-hover:text-white">
+                      Beginner
+                    </h3>
+                    <span class="text-lg text-black transition-all duration-300 ease-linear group-hover:text-white">Up
+                      to 10 members</span>
+
+                    <div class="my-5 h-[1px] w-full bg-[#DBD6CF]"></div>
+                    <h4
+                      class="mb-4 font-dmSans text-5xl font-bold leading-none text-black transition-all duration-300 ease-linear group-hover:text-white md:text-6xl lg:text-7xl xl:text-[80px]">
+                      $240<span class="text-lg font-semibold">/Per year</span>
+                    </h4>
+                    <p class="mb-10 text-lg text-black transition-all duration-300 ease-linear group-hover:text-white">
+                      This is an excellent option for people &amp; small
+                      businesses who are starting out.
+                    </p>
+                    <a class="button custom-button mt-auto block rounded-[50px] border-2 border-black bg-transparent py-4 text-center text-black group-hover:border-[#FE330A] group-hover:text-white"
+                      href="/">Choose the plan</a>
+                  </li>
+                  <li
+                    class="group flex flex-col rounded-[10px] bg-[#EBE6DF] p-10 transition-all duration-300 ease-linear hover:bg-black jos jos-flip wow animate__animated animate__flipInY animate__faster"
+                    data-jos_animation="flip" data-jos_delay="0" data-jos_once="1" data-jos_counter="0"
+                    data-jos_scrolldirection="down">
+                    <h3
+                      class="font-dmSans text-[28px] font-bold leading-[1.28] tracking-tighter text-black transition-all duration-300 ease-linear group-hover:text-white">
+                      Starter
+                    </h3>
+                    <span class="text-lg text-black transition-all duration-300 ease-linear group-hover:text-white">Up
+                      to 50 members</span>
+
+                    <div class="my-5 h-[1px] w-full bg-[#DBD6CF]"></div>
+                    <h4
+                      class="mb-4 font-dmSans text-5xl font-bold leading-none text-black transition-all duration-300 ease-linear group-hover:text-white md:text-6xl lg:text-7xl xl:text-[80px]">
+                      $960<span class="text-lg font-semibold">/Per year</span>
+                    </h4>
+                    <p class="mb-10 text-lg text-black transition-all duration-300 ease-linear group-hover:text-white">
+                      This plan is suitable for e-commerce stores as well as
+                      professional blogs.
+                    </p>
+                    <a class="button custom-button mt-auto block rounded-[50px] border-2 border-black bg-transparent py-4 text-center text-black group-hover:border-[#FE330A] group-hover:text-white"
+                      href="/">Choose the plan</a>
+                  </li>
+                  <li
+                    class="group flex flex-col rounded-[10px] bg-[#EBE6DF] p-10 transition-all duration-300 ease-linear hover:bg-black jos jos-flip wow animate__animated animate__flipInY animate__faster"
+                    data-jos_animation="flip" data-jos_delay="0" data-jos_once="1" data-jos_counter="0"
+                    data-jos_scrolldirection="down">
+                    <h3
+                      class="font-dmSans text-[28px] font-bold leading-[1.28] tracking-tighter text-black transition-all duration-300 ease-linear group-hover:text-white">
+                      Pro
+                    </h3>
+                    <span class="text-lg text-black transition-all duration-300 ease-linear group-hover:text-white">Up
+                      to 100 members</span>
+
+                    <div class="my-5 h-[1px] w-full bg-[#DBD6CF]"></div>
+                    <h4
+                      class="mb-4 font-dmSans text-5xl font-bold leading-none text-black transition-all duration-300 ease-linear group-hover:text-white md:text-6xl lg:text-7xl xl:text-[80px]">
+                      $1800<span class="text-lg font-semibold leading-none">/Per year</span>
+                    </h4>
+                    <p class="mb-10 text-lg text-black transition-all duration-300 ease-linear group-hover:text-white">
+                      Ideal for handling complicated projects enterprise-level
+                      projects, and websites.
+                    </p>
+                    <a class="button custom-button mt-auto block rounded-[50px] border-2 border-black bg-transparent py-4 text-center text-black group-hover:border-[#FE330A] group-hover:text-white"
+                      href="/">Choose the plan</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="faq-section">
+        <!-- Section Spacer -->
+        <div class="pb-20 xl:pb-[150px]">
+          <!-- Section Container -->
+          <div class="global-container">
+            <div class="grid grid-cols-1 gap-y-10 md:grid-cols-2">
+              <!-- FAQ Left Block -->
+              <div class="flex flex-col jos jos-fade-right wow animate__animated animate__fadeInLeft"
+                data-jos_animation="fade-right" data-jos_once="1" data-jos_counter="0" data-jos_scrolldirection="down">
+                <!-- Section Content Block -->
+                <div class="mb-6">
+                  <div class="mx-auto md:mx-0 md:max-w-none font-bold">
+                    <h2>Freely ask us for more information</h2>
+                  </div>
+                </div>
+                <!-- Section Content Block -->
+                <div class="text-lg leading-[1.4] lg:text-[21px]">
+                  <p class="mb-7 last:mb-0">
+                    Our AI SaaS solutions can be quickly deployed, enabling
+                    users to start benefiting from AI capabilities without
+                    lengthy setup and development times in fast-paced
+                    industries.
+                  </p>
+                  <a class="button w-[30%] mt-5 rounded-[50px] border-2 border-black py-4 faq-button" href="/">Ask
+                    you questions</a>
+                </div>
+              </div>
+              <!-- FAQ Left Block -->
+
+              <!-- FAQ Right Block -->
+              <div class="md:ml-10 lg:ml-20 xl:ml-32 jos jos-fade-left wow animate__animated animate__fadeInRight"
+                data-jos_animation="fade-left" data-jos_once="1" data-jos_counter="0" data-jos_scrolldirection="down">
+                <!-- Accordion-->
+                <ul class="accordion">
+                  <!-- Accordion items -->
+                  <li
+                    class="accordion-item border-b-[1px] border-[#DBD6CF] pb-6 pt-6 first:pt-0 last:border-b-0 last:pb-0 active">
+                    <div
+                      class="accordion-header flex items-center justify-between font-bold leading-[1.2] -tracking-[0.5px] text-black lg:text-[28px]">
+                      <p>How do I start AI SaaS?</p>
+                      <div class="accordion-icon">
+                        <img src="./img/plus.svg" alt="plus">
+                      </div>
+                    </div>
+                    <div class="accordion-content text-[#2C2C2C]">
+                      <p>
+                        Go to the our official website and require users to
+                        create an account. You'll need to provide some basic
+                        information and agree to our terms and conditions.
+                      </p>
+                    </div>
+                  </li>
+                  <!-- Accordion items -->
+                  <!-- Accordion items -->
+                  <li
+                    class="accordion-item border-b-[1px] border-[#DBD6CF] pb-6 pt-6 first:pt-0 last:border-b-0 last:pb-0">
+                    <div
+                      class="accordion-header flex items-center justify-between font-bold leading-[1.2] -tracking-[0.5px] text-black lg:text-[28px]">
+                      <p>Can I customize AI SaaS solutions?</p>
+                      <div class="accordion-icon">
+                        <img src="./img/plus.svg" alt="plus">
+                      </div>
+                    </div>
+                    <div class="accordion-content text-[#2C2C2C]">
+                      <p>
+                        Go to the our official website and require users to
+                        create an account. You'll need to provide some basic
+                        information and agree to our terms and conditions.
+                      </p>
+                    </div>
+                  </li>
+                  <!-- Accordion items -->
+                  <!-- Accordion items -->
+                  <li
+                    class="accordion-item border-b-[1px] border-[#DBD6CF] pb-6 pt-6 first:pt-0 last:border-b-0 last:pb-0">
+                    <div
+                      class="accordion-header flex items-center justify-between font-bold leading-[1.2] -tracking-[0.5px] text-black lg:text-[28px]">
+                      <p>How can AI benefit my business?</p>
+                      <div class="accordion-icon">
+                        <img src="./img/plus.svg" alt="plus">
+                      </div>
+                    </div>
+                    <div class="accordion-content text-[#2C2C2C]">
+                      <p>
+                        Go to the our official website and require users to
+                        create an account. You'll need to provide some basic
+                        information and agree to our terms and conditions.
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+                <!-- Accordion-->
+              </div>
+              <!-- FAQ Right Block -->
+            </div>
+          </div>
+          <!-- Section Container -->
+        </div>
+        <!-- Section Spacer -->
+      </section>
+      <!--...::: FAQ Section End :::... -->
+
+      <!--...::: Testimonial Section Start :::... -->
+      <section class="testimonial-section">
+        <!-- Section Spacer -->
+        <div class="bg-black pb-40 pt-20 xl:pb-[200px] xl:pt-[130px]">
+          <!-- Section Container -->
+          <div class="global-container">
+            <!-- Section Content Block -->
+            <div class="mb-10 text-center lg:mb-16 xl:mb-20 jos jos-fade-up wow animate__animated animate__fadeInUp"
+              data-jos_once="1" data-jos_animation="fade-up" data-jos_counter="0" data-jos_scrolldirection="down">
+              <div class="mx-auto max-w-[300px] lg:max-w-[600px] xl:max-w-[680px]">
+                <h2 class="text-white">Positive feedback from our users</h2>
+              </div>
+            </div>
+            <!-- Section Content Block -->
+
+            <!-- Testimonial List -->
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+              <!-- Testimonial Item -->
+              <div
+                class="flex flex-col gap-y-8 rounded-[10px] border-[1px] border-[#1B1B1B] p-[30px] text-white-1 jos jos-fade-left wow animate__animated animate__fadeInRight"
+                data-jos_animation="fade-left" data-jos_delay="0.1" data-jos_once="1" data-jos_counter="0"
+                data-jos_scrolldirection="down">
+                <div class="block">
+                  <img src="./img/rating.svg" alt="rating" width="146" height="25">
+                </div>
+                <p>
+                  “This AI SaaS tool has revolutionized the way we process and
+                  analyze data. This is a game-changer for our business.”
+                </p>
+                <div class="flex items-center gap-x-4">
+                  <div class="h-[60px] w-[60px] overflow-hidden rounded-full">
+                    <img src="./img/testimonial-img-1.jpg" alt="testimonial-img" width="60" height="60"
+                      class="h-full w-full object-cover object-center">
+                  </div>
+                  <div class="flex flex-col gap-y-1">
+                    <span class="block text-lg font-semibold leading-[1.6]">
+                      Max Weber
+                    </span>
+                    <span class="block text-sm font-light leading-[1.4]">
+                      HR Manager
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <!-- Testimonial Item -->
+              <!-- Testimonial Item -->
+              <div
+                class="flex flex-col gap-y-8 rounded-[10px] border-[1px] border-[#1B1B1B] p-[30px] text-white-1 jos jos-fade-left wow animate__animated animate__fadeInRight"
+                data-jos_animation="fade-left" data-jos_delay="0.2" data-jos_once="1" data-jos_counter="0"
+                data-jos_scrolldirection="down">
+                <div class="block">
+                  <img src="./img/rating.svg" alt="rating" width="146" height="25">
+                </div>
+                <p>
+                  "It answers immediately, and we've seen a significant
+                  reduction in response time. Our customers love it and so do
+                  we!"
+                </p>
+                <div class="flex items-center gap-x-4">
+                  <div class="h-[60px] w-[60px] overflow-hidden rounded-full">
+                    <img src="./img/testimonial-img-2.jpg" alt="testimonial-img" width="60" height="60"
+                      class="h-full w-full object-cover object-center">
+                  </div>
+                  <div class="flex flex-col gap-y-1">
+                    <span class="block text-lg font-semibold leading-[1.6]">
+                      Douglas Smith
+                    </span>
+                    <span class="block text-sm font-light leading-[1.4]">
+                      Businessman
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <!-- Testimonial Item -->
+              <!-- Testimonial Item -->
+              <div
+                class="flex flex-col gap-y-8 rounded-[10px] border-[1px] border-[#1B1B1B] p-[30px] text-white-1 jos jos-fade-left wow animate__animated animate__fadeInRight"
+                data-jos_animation="fade-left" data-jos_delay="0.3" data-jos_once="1" data-jos_counter="0"
+                data-jos_scrolldirection="down">
+                <div class="block">
+                  <img src="./img/rating.svg" alt="rating" width="146" height="25">
+                </div>
+                <p>
+                  "It is accurate, fast and supports multiple languages
+                  support. It is a must for any international business
+                  success."
+                </p>
+                <div class="flex items-center gap-x-4">
+                  <div class="h-[60px] w-[60px] overflow-hidden rounded-full">
+                    <img src="./img/testimonial-img-3.jpg" alt="testimonial-img" width="60" height="60"
+                      class="h-full w-full object-cover object-center">
+                  </div>
+                  <div class="flex flex-col gap-y-1">
+                    <span class="block text-lg font-semibold leading-[1.6]">
+                      Abraham Maslo
+                    </span>
+                    <span class="block text-sm font-light leading-[1.4]">
+                      Founder @ Marketing Company
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <!-- Testimonial Item -->
+              <!-- Testimonial Item -->
+              <div
+                class="flex flex-col gap-y-8 rounded-[10px] border-[1px] border-[#1B1B1B] p-[30px] text-white-1 jos jos-fade-right wow animate__animated animate__fadeInLeft"
+                data-jos_animation="fade-right" data-jos_delay="0.1" data-jos_once="1" data-jos_counter="0"
+                data-jos_scrolldirection="down">
+                <div class="block">
+                  <img src="./img/rating.svg" alt="rating" width="146" height="25">
+                </div>
+                <p>
+                  "Security is a top concern for us, and AI SaaS takes it
+                  seriously. It's a reassuring layer of protection for our
+                  organization."
+                </p>
+                <div class="flex items-center gap-x-4">
+                  <div class="h-[60px] w-[60px] overflow-hidden rounded-full">
+                    <img src="./img/testimonial-img-4.jpg" alt="testimonial-img" width="60" height="60"
+                      class="h-full w-full object-cover object-center">
+                  </div>
+                  <div class="flex flex-col gap-y-1">
+                    <span class="block text-lg font-semibold leading-[1.6]">
+                      Jack Fayol
+                    </span>
+                    <span class="block text-sm font-light leading-[1.4]">
+                      HR Manager
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <!-- Testimonial Item -->
+              <!-- Testimonial Item -->
+              <div
+                class="flex flex-col gap-y-8 rounded-[10px] border-[1px] border-[#1B1B1B] p-[30px] text-white-1 jos jos-fade-right wow animate__animated animate__fadeInLeft"
+                data-jos_animation="fade-right" data-jos_delay="0.2" data-jos_once="1" data-jos_counter="0"
+                data-jos_scrolldirection="down">
+                <div class="block">
+                  <img src="./img/rating.svg" alt="rating" width="146" height="25">
+                </div>
+                <p>
+                  "We were concerned about integrating their APIs were well
+                  documented, and their support team was super cool."
+                </p>
+                <div class="flex items-center gap-x-4">
+                  <div class="h-[60px] w-[60px] overflow-hidden rounded-full">
+                    <img src="./img/testimonial-img-5.jpg" alt="testimonial-img" width="60" height="60"
+                      class="h-full w-full object-cover object-center">
+                  </div>
+                  <div class="flex flex-col gap-y-1">
+                    <span class="block text-lg font-semibold leading-[1.6]">
+                      Karen Lynn
+                    </span>
+                    <span class="block text-sm font-light leading-[1.4]">
+                      Software Engineer
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <!-- Testimonial Item -->
+              <!-- Testimonial Item -->
+              <div
+                class="flex flex-col gap-y-8 rounded-[10px] border-[1px] border-[#1B1B1B] p-[30px] text-white-1 jos jos-fade-right wow animate__animated animate__fadeInLeft"
+                data-jos_animation="fade-right" data-jos_delay="0.3" data-jos_once="1" data-jos_counter="0"
+                data-jos_scrolldirection="down">
+                <div class="block">
+                  <img src="./img/rating.svg" alt="rating" width="146" height="25">
+                </div>
+                <p>
+                  "The return on investment has exceeded our expectations.
+                  it's an investment in the future of our business."
+                </p>
+                <div class="flex items-center gap-x-4">
+                  <div class="h-[60px] w-[60px] overflow-hidden rounded-full">
+                    <img src="./img/testimonial-img-6.jpg" alt="testimonial-img" width="60" height="60"
+                      class="h-full w-full object-cover object-center">
+                  </div>
+                  <div class="flex flex-col gap-y-1">
+                    <span class="block text-lg font-semibold leading-[1.6]">
+                      Henry Ochi
+                    </span>
+                    <span class="block text-sm font-light leading-[1.4]">
+                      Bank Manager
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <!-- Testimonial Item -->
+            </div>
+            <!-- Testimonial List -->
+          </div>
+          <!-- Section Container -->
+        </div>
+        <!-- Section Spacer -->
+      </section>
+      <!--...::: Testimonial Section Start :::... -->
+
+      <!-- Body Background Shape 1 -->
+      <div
+        class="orange-gradient-1 absolute -left-[15px] top-[19%] -z-[1] h-[400px] w-[400px] -rotate-[-9.022deg] rounded-[400px]">
+      </div>
+
+      <!-- Body Background Shape 2 -->
+      <div
+        class="orange-gradient-2 absolute -left-[100px] top-[25%] -z-[1] h-[360px] w-[360px] -rotate-[-9.022deg] rounded-[360px]">
+      </div>
+    </main>
+
+    <!--...::: Footer Section Start :::... -->
+    <footer
+      class="relative z-[1] -mt-[70px] overflow-hidden rounded-tl-[30px] rounded-tr-[30px] bg-[#EFEAE3] lg:rounded-tl-[50px] lg:rounded-tr-[50px]">
+      <!-- Footer slide -->
+      <div class="py-[60px] xl:pb-[100px] xl:pt-[130px]">
+        <div class="overflow-hidden">
+          <div class="footer-text-slider flex items-center gap-x-[30px]">
+            <div class="slider-item flex items-center gap-x-4">
+              <img src="./img/footer-text-slider-icon.svg" alt="footer-text-slider-icon"
+                class="h-10 w-10 lg:h-[60px] lg:w-[60px]">
+              <div
+                class="block font-dmSans text-4xl font-bold leading-none -tracking-[2px] text-black lg:text-6xl xl:text-7xl xxl:text-[80px]">
+                Start building software
+              </div>
+            </div>
+            <div class="slider-item flex items-center gap-x-4">
+              <img src="./img/footer-text-slider-icon.svg" alt="footer-text-slider-icon"
+                class="h-10 w-10 lg:h-[60px] lg:w-[60px]">
+              <div
+                class="block font-dmSans text-4xl font-bold leading-none -tracking-[2px] text-black lg:text-6xl xl:text-7xl xxl:text-[80px]">
+                Start building software
+              </div>
+            </div>
+            <div class="slider-item flex items-center gap-x-4">
+              <img src="./img/footer-text-slider-icon.svg" alt="footer-text-slider-icon"
+                class="h-10 w-10 lg:h-[60px] lg:w-[60px]">
+              <div
+                class="block font-dmSans text-4xl font-bold leading-none -tracking-[2px] text-black lg:text-6xl xl:text-7xl xxl:text-[80px]">
+                Start building software
+              </div>
+            </div>
+            <div class="slider-item flex items-center gap-x-4">
+              <img src="./img/footer-text-slider-icon.svg" alt="footer-text-slider-icon"
+                class="h-10 w-10 lg:h-[60px] lg:w-[60px]">
+              <div
+                class="block font-dmSans text-4xl font-bold leading-none -tracking-[2px] text-black lg:text-6xl xl:text-7xl xxl:text-[80px]">
+                Start building software
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Footer End -->
+      <div class="global-container">
+        <div class="h-[1px] w-full bg-[#DBD6CF]"></div>
+        <div
+          class="lg grid grid-cols-1 gap-10 py-[60px] md:grid-cols-[1fr_auto_auto] xl:grid-cols-[1fr_auto_auto_1fr] xl:gap-20 xl:py-[100px]">
+          <div class="flex flex-col gap-y-6">
+            <a class="inline-block" href="/"><img src="./img/logo.png" alt="logo" width="96" height="24"></a>
+            <p>
+              Our mission is to harness the power of AI to solve complex
+              business challenges &amp; decision-makers with data-driven insights,
+              and enhance user experiences across digital platforms.
+            </p>
+            <p>
+              Website: <a href="/">www.example.com</a>
+            </p>
+          </div>
+          <div class="flex flex-col gap-y-6">
+            <h4 class="text-[21px] font-semibold capitalize text-black">
+              Primary Pages
+            </h4>
+            <ul class="flex flex-col gap-y-[10px] capitalize">
+              <li>
+                <a class="transition-all duration-300 ease-linear hover:text-[#FE330A]" href="/">Home</a>
+              </li>
+              <li>
+                <a class="transition-all duration-300 ease-linear hover:text-[#FE330A]" href="/">About
+                  Us</a>
+              </li>
+              <li>
+                <a class="transition-all duration-300 ease-linear hover:text-[#FE330A]" href="/">Services</a>
+              </li>
+              <li>
+                <a class="transition-all duration-300 ease-linear hover:text-[#FE330A]" href="/">pricing</a>
+              </li>
+              <li>
+                <a class="transition-all duration-300 ease-linear hover:text-[#FE330A]" href="/">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="flex flex-col gap-y-6">
+            <h4 class="text-[21px] font-semibold capitalize text-black">
+              Utility pages
+            </h4>
+            <ul class="flex flex-col gap-y-[10px] capitalize">
+              <li>
+                <a class="transition-all duration-300 ease-linear hover:text-[#FE330A]" href="/">Signup</a>
+              </li>
+              <li>
+                <a class="transition-all duration-300 ease-linear hover:text-[#FE330A]" href="/">Login</a>
+              </li>
+              <li>
+                <a class="transition-all duration-300 ease-linear hover:text-[#FE330A]" href="/">404 Not
+                  found</a>
+              </li>
+              <li>
+                <a class="transition-all duration-300 ease-linear hover:text-[#FE330A]" href="/">Password
+                  Reset</a>
+              </li>
+            </ul>
+          </div>
+          <div class="flex flex-col gap-y-6">
+            <h4 class="text-[21px] font-semibold capitalize text-black">
+              Subscribe to our newsletter
+            </h4>
+            <form action="/" method="post" class="">
+              <div class="relative h-[50px] max-w-[300px]">
+                <input type="email" name="newsletter-email" id="newsletter-email" placeholder="Enter your email"
+                  class="p-y-[18px] h-full w-full rounded-[50px] border-[1px] border-black px-[24px] pr-20 outline-none"
+                  required="">
+                <button type="submit"
+                  class="absolute right-[5px] top-[50%] inline-block h-10 -translate-y-[50%] rounded-[50px] bg-black px-6 transition-all hover:bg-orange-500">
+                  <img src="./img/arrow-right-large.svg" alt="newsletter">
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="h-[1px] w-full bg-[#DBD6CF]"></div>
+        <div class="py-9 text-center">
+          <p>© Copyright 2023, All Rights Reserved by Mthemeus</p>
+        </div>
+      </div>
+      <div
+        class="orange-gradient-2 absolute -top-[290px] right-[90px] -z-[1] h-[406px] w-[406px] -rotate-[58deg] rounded-[406px]">
+      </div>
+      <div
+        class="orange-gradient-1 absolute -right-[200px] -top-[205px] -z-[1] h-[451px] w-[451px] -rotate-[58deg] rounded-[451px]">
+      </div>
+    </footer>
+    </main>
+  </div>
+
+
+
+  <!--Pricing  -->
+  <script>
+    const buttons = document.querySelectorAll(".tab-button");
+    const contents = document.querySelectorAll(".tab-content");
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        // Remove active class from all buttons
+        buttons.forEach((btn) => btn.classList.remove("active"));
+        // Add active to clicked one
+        button.classList.add("active");
+
+        const tab = button.getAttribute("data-tab");
+        // Show corresponding tab
+        contents.forEach((content) => {
+          content.classList.toggle("hidden", content.id !== tab);
+        });
+      });
+    });
+  </script>
+
+  <!-- FAQ -->
+  <script>
+    document.querySelectorAll('.accordion-icon').forEach(icon => {
+      icon.addEventListener('click', function () {
+        const currentItem = this.closest('.accordion-item');
+
+        // Nếu đang mở, thì đóng lại
+        if (currentItem.classList.contains('active')) {
+          currentItem.classList.remove('active');
+          return;
+        }
+
+        // Đóng tất cả item khác
+        document.querySelectorAll('.accordion-item').forEach(item => {
+          item.classList.remove('active');
+        });
+
+        // Mở item hiện tại
+        currentItem.classList.add('active');
+      });
+    });
+  </script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"
+    integrity="sha512-ZKNVEa7gi0Dz4Rq9jXcySgcPiK+5f01CqW+ZoKLLKr9VMXuCsw3RjWiv8ZpIOa0hxO79np7Ec8DDWALM0bDOaQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="./libs/countup/jquery.countup.min.js"></script>
+  <script>
+    $(".number__count").countUp();
+  </script>
+
+
+  <!-- wow -->
+  <script src="./libs/wowjs/wow.min.js"></script>
+  <script>
+    new WOW().init();
+  </script>
+
+  <!-- Flowbite Script -->
   <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </body>
+
 </html>
