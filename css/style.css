@@ -1,341 +1,388 @@
 * {
-    box-sizing: border-box;
-    border-style: solid;
-  }
-  
-  body {
-    min-height: 100vh;
-    font-family: Inter, sans-serif;
-    font-size: 1.125rem;
-    line-height: 1.66;
-    --tw-text-opacity: 1;
-    color: rgb(25 25 25 / var(--tw-text-opacity));
-  }
-  
-  .global-container {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1332px;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  
-  h2{
-    font-size: 2.25rem;
-      line-height: 2.5rem;
-  }
-  
-  @media (min-width: 992px) {
-    h2 {
-      font-size: 3.75rem;
-      line-height: 1;
-    }
-  }
-  
-  @media (min-width: 1200px) {
-    h2 {
-      font-size: 4.5rem;
-      line-height: 1;
-    }
-  }
-  
-  @media (min-width: 1400px) {
-    h2 {
-      font-size: 79px;
-    }
-  }
-  
-  
-  @media (min-width: 1200px) and (max-width: 1535px) {
-    #funfact-grid {
-      grid-template-columns: minmax(400px, 1fr) 1.5fr;
-    }
-  }
-  
-  @media (min-width: 1536px) {
-    #funfact-grid {
-      grid-template-columns: 1fr minmax(800px, 1fr);
-    }
-  }
-  
-  @media (min-width: 992px) {
-    #funfact-grid .img {
-      height: 35rem;
-    }
-  }
-  
-  .text-white {
-    font-family: "DM Sans", sans-serif;
-    font-weight: 700;
+  box-sizing: border-box;
+  border-style: solid;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Inter, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.66;
+  --tw-text-opacity: 1;
+  color: rgb(25 25 25 / var(--tw-text-opacity));
+}
+
+.global-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1332px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+h2 {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+@media (min-width: 992px) {
+  h2 {
+    font-size: 3.75rem;
     line-height: 1;
   }
-  
-  .text-white-1 {
-    --tw-text-opacity: 1;
-      color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+@media (min-width: 1200px) {
+  h2 {
+    font-size: 4.5rem;
+    line-height: 1;
   }
-  
-  .text-left .p {
-    font-family: "DM Sans", sans-serif;
+}
+
+@media (min-width: 1400px) {
+  h2 {
+    font-size: 79px;
   }
-  
-  /* Pricing */
-  .price-button.active {
-    --tw-bg-opacity: 1;
-    background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-    --tw-text-opacity: 1;
-    color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+
+@media (min-width: 1200px) and (max-width: 1535px) {
+  #funfact-grid {
+    grid-template-columns: minmax(400px, 1fr) 1.5fr;
   }
-  
-  .price-button {
-    display: inline-block;
-    border-radius: 50px;
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    font-family: Inter, sans-serif;
-    transition-property: all;
-    transition-duration: 300ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 1536px) {
+  #funfact-grid {
+    grid-template-columns: 1fr minmax(800px, 1fr);
   }
-  
-  button,
-  [role="button"] {
-    cursor: pointer;
+}
+
+@media (min-width: 992px) {
+  #funfact-grid .img {
+    height: 35rem;
   }
-  
-  @media (min-width: 1400px) {
-    .xxl\:grid-cols-3 {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
+}
+
+.text-white {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.text-white-1 {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-left .p {
+  font-family: "DM Sans", sans-serif;
+}
+
+
+@media (min-width: 1400px) {
+  .xxl\:text1-8xl {
+    font-size: 120px !important;
   }
-  
-  .custom-button {
-    position: relative;
-    display: block;
-    background: transparent;
-    text-align: center;
-    overflow: hidden; /* để hiệu ứng không tràn ra ngoài */
-    z-index: 1;
-    transition: color 0.3s ease, border-color 0.3s ease;
-    font-weight: 700;
+}
+
+
+@media (min-width: 1400px) {
+  .xxl\:max-w-1 {
+    max-width: 625px !important;
   }
-  
-  .custom-button::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: #fe330a;
-    transform: translateY(-100%);
-    transition: transform 0.4s ease;
-    z-index: -1;
+}
+
+
+
+/* Pricing */
+.price-button.active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.price-button {
+  display: inline-block;
+  border-radius: 50px;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-family: Inter, sans-serif;
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+@media (min-width: 1400px) {
+  .xxl\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-  
-  .custom-button:hover::after {
-    transform: translateY(0);
+}
+
+@media (min-width: 768px) {
+  .md\:max-w-xs {
+      max-width: 20rem;
   }
-  
-  .custom-button:hover {
-    border-color: #fe330a;
-    color: white;
+}
+
+@media (min-width: 992px) {
+  .lg\:max-w-xl {
+      max-width: 36rem;
   }
-  
-  @media (min-width: 1200px) {
-    .xl\:text-\[80px\] {
-      font-size: 80px;
-    }
+}
+
+@media (min-width: 1200px) {
+  .xl\:max-w-\[746px\] {
+      max-width: 746px;
   }
-  
-  /* FAQ */
-  
-  
-  
-  
-  .faq-button {
-    position: relative;
-    display: block;
-    background: transparent;
-    text-align: center;
-    overflow: hidden; /* để hiệu ứng không tràn ra ngoài */
-    z-index: 1;
-    transition: color 0.3s ease, border-color 0.3s ease;
-    font-weight: 700;
-    background-color: black;
-    color: white;
+
+  .xl\:text-\[75px\]{
+    font-size: 75px;
   }
-  
-  .faq-button::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: #fe330a;
-    transform: translateY(-100%);
-    transition: transform 0.4s ease;
-    z-index: -1;
+}
+
+.custom-button {
+  position: relative;
+  display: block;
+  background: transparent;
+  text-align: center;
+  overflow: hidden;
+  /* để hiệu ứng không tràn ra ngoài */
+  z-index: 1;
+  transition: color 0.3s ease, border-color 0.3s ease;
+  font-weight: 700;
+}
+
+.custom-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #fe330a;
+  transform: translateY(-100%);
+  transition: transform 0.4s ease;
+  z-index: -1;
+}
+
+.custom-button:hover::after {
+  transform: translateY(0);
+}
+
+.custom-button:hover {
+  border-color: #fe330a;
+  color: white;
+}
+
+/* FAQ */
+
+.faq-button {
+  position: relative;
+  display: block;
+  background: transparent;
+  text-align: center;
+  overflow: hidden;
+  /* để hiệu ứng không tràn ra ngoài */
+  z-index: 1;
+  transition: color 0.3s ease, border-color 0.3s ease;
+  font-weight: 700;
+  background-color: black;
+  color: white;
+}
+
+.faq-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #fe330a;
+  transform: translateY(-100%);
+  transition: transform 0.4s ease;
+  z-index: -1;
+}
+
+.faq-button:hover::after {
+  transform: translateY(0);
+}
+
+.faq-button:hover {
+  border-color: #fe330a;
+  color: white;
+  /* Hoặc để đen nếu bạn muốn */
+}
+
+.accordion-item.active .accordion-icon img {
+  transform: rotate(-45deg);
+}
+
+.accordion-icon img {
+  transition: all 0.3s ease;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.accordion-item.active .accordion-content {
+  height: auto;
+  transition: all 0.5s ease;
+  opacity: 1;
+  transform: translateY(0px);
+  margin-top: 15px;
+}
+
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.accordion-content p {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Khi accordion mở */
+.accordion-item.active .accordion-content {
+  max-height: 1500px;
+}
+
+.accordion-item.active .accordion-content p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (min-width: 768px) {
+  .he1 {
+      max-height: 150px !important;
   }
-  
-  .faq-button:hover::after {
-    transform: translateY(0);
+
+  .button {
+    width: 180px !important;
   }
-  
-  .faq-button:hover {
-    border-color: #fe330a;
-    color: white; /* Hoặc để đen nếu bạn muốn */
+}
+
+
+@media (min-width: 992px) {
+  .max-he1 {
+      max-height: 150px !important;
   }
-  
-  .accordion-item.active .accordion-icon img {
-    transform: rotate(-45deg);
+}
+
+
+/* Testimoianl */
+@media (min-width: 0px) {
+  .max-w-\[300px\] {
+    max-width: 300px;
   }
-  
-  .accordion-icon img {
-    transition: all 0.3s ease;
-  }
-  
-  .accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-  }
-  
-  .accordion-item.active .accordion-content {
-    height: auto;
-    transition: all 0.5s ease;
-    opacity: 1;
-    transform: translateY(0px);
-    margin-top: 15px;
-  }
-  
-  
-  .accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-  }
-  
-  .accordion-content p {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
-  }
-  
-  /* Khi accordion mở */
-  .accordion-item.active .accordion-content {
-    max-height: 100px;
-  }
-  
-  .accordion-item.active .accordion-content p {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  
-  /* Testimoianl */
-  @media (min-width: 0px) {
-    .max-w-\[300px\] {
-      max-width: 300px;
-    }
-  
+
   @media (min-width: 992px) {
     .lg\:max-w-\[600px\] {
-        max-width: 600px;
+      max-width: 600px;
     }
   }
-  
+
   @media (min-width: 1200px) {
     .xl\:max-w-\[680px\] {
-        max-width: 680px;
+      max-width: 680px;
     }
   }
-  
+
   @media (min-width: 1200px) {
     .xl\:max-w-\[680px\] {
-        max-width: 680px;
+      max-width: 680px;
     }
   }
+}
+
+
+/* Footer Slide*/
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
   }
-  
-  
-  /* Footer Slide*/
-  @keyframes marquee {
-    0% {
-      transform: translateX(0); 
-    }
-    100% {
-      transform: translateX(-100%); 
-    }
+
+  100% {
+    transform: translateX(-100%);
   }
-  
-  .footer-text-slider {
-    display: flex;
-    gap: 30px;
-    animation: marquee 30s linear infinite; 
-    white-space: nowrap; 
+}
+
+.footer-text-slider {
+  display: flex;
+  gap: 30px;
+  animation: marquee 30s linear infinite;
+  white-space: nowrap;
+}
+
+.footer-text-slider .slider-item {
+  flex-shrink: 0;
+}
+
+.footer-text-slider img,
+.footer-text-slider div {
+  flex-shrink: 0;
+}
+
+
+.footer-text-slider {
+  padding-right: 100px;
+}
+
+@media (min-width: 992px) {
+  .lg\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
   }
-  
-  .footer-text-slider .slider-item {
-    flex-shrink: 0; 
+}
+
+@media (min-width: 1200px) {
+  .xl\:text-7xl {
+    font-size: 4.5rem;
+    line-height: 1;
   }
-  
-  .footer-text-slider img,
-  .footer-text-slider div {
-    flex-shrink: 0;
+}
+
+@media (min-width: 1400px) {
+  .xxl\:text-\[80px\] {
+    font-size: 80px;
   }
-  
-  
-  .footer-text-slider {
-    padding-right: 100px; 
+}
+
+/* Footer End */
+@media (min-width: 768px) {
+  .md\:grid-cols-\[1fr_auto_auto\] {
+    grid-template-columns: 1fr auto auto;
   }
-  
-  @media (min-width: 992px) {
-    .lg\:text-6xl {
-        font-size: 3.75rem;
-        line-height: 1;
-    }
+}
+
+@media (min-width: 1200px) {
+  .xl\:grid-cols-\[1fr_auto_auto_1fr\] {
+    grid-template-columns: 1fr auto auto 1fr;
   }
-  
-  @media (min-width: 1200px) {
-    .xl\:text-7xl {
-        font-size: 4.5rem;
-        line-height: 1;
-    }
-  }
-  
-  @media (min-width: 1400px) {
-    .xxl\:text-\[80px\] {
-        font-size: 80px;
-    }
-  }
-  
-  /* Footer End */
-  @media (min-width: 768px) {
-    .md\:grid-cols-\[1fr_auto_auto\] {
-        grid-template-columns: 1fr auto auto;
-    }
-  }
-  
-  @media (min-width: 1200px) {
-    .xl\:grid-cols-\[1fr_auto_auto_1fr\] {
-        grid-template-columns: 1fr auto auto 1fr;
-    }
-  }
-  
-  
-  .orange-gradient-1 {
-    background: radial-gradient(50% 50% at 50% 50%, #ff9831 0%, #fe330a 100%);
-    filter: blur(55px);
-  }
-  
-  .orange-gradient-2 {
-    background: radial-gradient(50% 50% at 50% 50%, #fe330a 0%, #ff9831 100%);
-    filter: blur(55px);
-  }
-  
-  
-  
+}
+
+
+.orange-gradient-1 {
+  background: radial-gradient(50% 50% at 50% 50%, #ff9831 0%, #fe330a 100%);
+  filter: blur(55px);
+}
+
+.orange-gradient-2 {
+  background: radial-gradient(50% 50% at 50% 50%, #fe330a 0%, #ff9831 100%);
+  filter: blur(55px);
+}
