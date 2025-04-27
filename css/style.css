@@ -1,6 +1,9 @@
+
 body {
     font-family: 'Inter';
+     overflow-x: hidden;
   }
+  
 .hero{
   font-size: 115px;
   line-height: 1; 
@@ -54,10 +57,10 @@ body {
 
 
 /* Fade effect cho line */
-@keyframes fadeInUp {
+/* @keyframes fadeInUp {
   0% {
     transform:
-  }}
+  }} */
 
 .container{
   margin-top: -450px;
@@ -134,4 +137,30 @@ body {
 }
 .image img{
   width: 1280px;
+}  
+
+
+
+@media (max-width: 2000px) {
+.container{
+  margin-top: auto;
+}
+.container p{
+  margin-top: -100px;
+}
+
+.section img{
+  margin-left: 160px;
+  margin-top: -30px;
+}
+
+.section2{
+  margin-left: 160px;
+  margin-top: 50px;
+}
+.section4 {
+  width: 700px;
+  height: 400px;
+  margin-bottom: 180px;
+}
 }
