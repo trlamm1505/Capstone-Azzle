@@ -1,6 +1,8 @@
 * {
   box-sizing: border-box;
   border-style: solid;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 body {
