@@ -21,6 +21,7 @@
 
 <body>
   <!-- Header -->
+  <!-- Header -->
   <div class="bg-[#EFEAE3] " style=" border-bottom-left-radius: 50px; border-bottom-right-radius: 50px; padding-bottom: 100px;">
 
     <header>
@@ -706,6 +707,7 @@
     <img src="./images/content-image-2.jpg" alt="Traffic by location chart" class="w-full md:w-[520px] h-auto" />
   </div>
 </div>
+
 
 
 
@@ -1397,147 +1399,200 @@
   <!-- JS -->
 
   <script>
-    // Hàm điều chỉnh hiển thị của navbar và nút toggle dựa trên kích thước màn hình
-    function toggleNavbarVisibility() {
-      var navbar = document.getElementById('navbar-multi-level');
-      var menuToggle = document.getElementById('menu-toggle');
-      var screenWidth = window.innerWidth;
-  
-      if (screenWidth <= 991) {
-        // Ẩn navbar và hiển thị nút toggle nếu màn hình dưới hoặc bằng 991px
-        navbar.style.display = 'none';
-        if (menuToggle) {
-          menuToggle.style.display = 'block';
-        }
-      } else {
-        // Hiển thị navbar và ẩn nút toggle nếu màn hình rộng hơn 991px
-        navbar.style.display = 'flex';
-        if (menuToggle) {
-          menuToggle.style.display = 'none';
-        }
+    // Lấy các phần tử cần thiết
+    const menuToggle = document.getElementById("menu-toggle");
+    const overlayMenu = document.getElementById("overlay-menu");
+    const closeOverlay = document.getElementById("close-overlay");
+    
+    // Mở menu khi bấm vào nút toggle
+    menuToggle.addEventListener("click", () => {
+      overlayMenu.classList.toggle("hidden");
+    });
+    
+    // Đóng menu khi bấm vào nút đóng
+    closeOverlay.addEventListener("click", () => {
+      overlayMenu.classList.add("hidden");
+    });
+    
+    // Đóng menu khi click ra ngoài overlay menu
+    document.addEventListener("click", (event) => {
+      // Kiểm tra nếu click ngoài menu và menu đang mở
+      if (!overlayMenu.contains(event.target) && !menuToggle.contains(event.target) && !closeOverlay.contains(event.target)) {
+        overlayMenu.classList.add("hidden");
+      }
+    });
+    
+    // Xử lý khi màn hình có độ rộng lớn hơn 991px
+    const mediaQuery = window.matchMedia("(min-width: 991px)");
+    
+    function handleMediaQueryChange(event) {
+      if (event.matches) {
+        // Ẩn menu khi màn hình rộng hơn 991px
+        overlayMenu.classList.add("hidden");
       }
     }
-  
-    // Gọi hàm khi tải trang và khi thay đổi kích thước cửa sổ
-    window.addEventListener('load', toggleNavbarVisibility);
-    window.addEventListener('resize', toggleNavbarVisibility);
-  </script>
-
-
-
-
     
-<script>
-  const track = document.getElementById('carousel-track');
-let currentIndex = 0;
-let totalOffset = 0;
-let imagesToShow = 5; // Số lượng ảnh hiển thị mặc định
-
-// Hàm tính toán kích thước của từng ảnh
-function getStepSize(index) {
- const el = track.children[index];
- const style = window.getComputedStyle(el);
- const marginLeft = parseFloat(style.marginLeft);
- const marginRight = parseFloat(style.marginRight);
- return el.offsetWidth + marginLeft + marginRight;
-}
-
-// Hàm cập nhật số lượng ảnh cần hiển thị dựa trên kích thước màn hình
-function updateImagesToShow() {
- const windowWidth = window.innerWidth;
- console.log('Window Width:', windowWidth); // Debug log để kiểm tra kích thước cửa sổ
-
- // Điều chỉnh số lượng ảnh hiển thị tùy vào kích thước màn hình
- if (windowWidth < 771) {
-   imagesToShow = 2; // Hiển thị 2 ảnh cho màn hình nhỏ
- } else if (windowWidth < 991) {
-   imagesToShow = 3; // Hiển thị 3 ảnh cho màn hình dưới 991px
- } else if (windowWidth < 1200) {
-   imagesToShow = 4; // Hiển thị 4 ảnh cho màn hình dưới 1200px
- } else {
-   imagesToShow = 5; // Hiển thị 5 ảnh cho màn hình lớn
- }
-
- console.log('Images to Show:', imagesToShow); // Debug log để kiểm tra số lượng ảnh cần hiển thị
-
- // Đảm bảo rằng khi thay đổi kích thước màn hình, carousel sẽ quay lại vị trí đầu
- currentIndex = 0;
- totalOffset = 0;
- track.style.transition = 'none'; // Tắt hiệu ứng chuyển động khi thay đổi
- track.style.transform = `translateX(0px)`; // Đưa carousel về đầu
- setTimeout(() => {
-   track.style.transition = 'transform 0.2s ease-in-out'; // Bật lại hiệu ứng chuyển động
- }, 100);
-}
-
-// Hàm di chuyển carousel
-function moveNext() {
- const step = getStepSize(currentIndex);
- const totalWidth = track.scrollWidth; // Tổng chiều rộng của tất cả các ảnh trong carousel
- const visibleWidth = track.offsetWidth; // Chiều rộng của phần có thể nhìn thấy
-
- // Kiểm tra nếu ảnh tiếp theo không thể hiển thị đầy đủ, không di chuyển
- if (totalOffset + visibleWidth < totalWidth) {
-   totalOffset += step;
-   currentIndex++;
-   track.style.transition = 'transform 0.2s ease-in-out';
-   track.style.transform = `translateX(-${totalOffset}px)`;
- } else {
-   // Nếu không còn ảnh nào để hiển thị đầy đủ, quay lại đầu
-   track.style.transition = 'transform 0.3s ease-in-out';
-   track.style.transform = 'translateX(0px)';
-   currentIndex = 0;
-   totalOffset = 0;
- }
-}
-
-// Cập nhật số lượng ảnh khi cửa sổ thay đổi kích thước
-window.addEventListener('resize', updateImagesToShow);
-
-// Gọi updateImagesToShow ngay khi tải trang để xác định số lượng ảnh ban đầu
-updateImagesToShow();
-
-// Thiết lập vòng lặp di chuyển ảnh mỗi 5 giây
-setInterval(moveNext, 5000); // 5 giây 1 lần
-</script>
-
-
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.remove("opacity-0"); // Xóa opacity 0 khi phần tử vào tầm nhìn
-
-          // Kiểm tra loại phần tử và thêm hiệu ứng tương ứng
-          if (entry.target.classList.contains("fadeIn")) {
-            entry.target.classList.add("animate__fadeIn"); // Áp dụng fadeIn cho các phần tử cần fade-in
+    // Lắng nghe thay đổi độ rộng màn hình
+    mediaQuery.addEventListener("change", handleMediaQueryChange);
+    
+    // Kiểm tra ngay từ đầu khi trang load
+    if (mediaQuery.matches) {
+      overlayMenu.classList.add("hidden");
+    }
+    
+    
+      </script>
+      
+      
+     
+    
+      <script>
+        // Hàm điều chỉnh hiển thị của navbar và nút toggle dựa trên kích thước màn hình
+        function toggleNavbarVisibility() {
+          var navbar = document.getElementById('navbar-multi-level');
+          var menuToggle = document.getElementById('menu-toggle');
+          var screenWidth = window.innerWidth;
+      
+          if (screenWidth <= 991) {
+            // Ẩn navbar và hiển thị nút toggle nếu màn hình dưới hoặc bằng 991px
+            navbar.style.display = 'none';
+            if (menuToggle) {
+              menuToggle.style.display = 'block';
+            }
+          } else {
+            // Hiển thị navbar và ẩn nút toggle nếu màn hình rộng hơn 991px
+            navbar.style.display = 'flex';
+            if (menuToggle) {
+              menuToggle.style.display = 'none';
+            }
           }
-          if (entry.target.classList.contains("fadeInUp")) {
-            entry.target.classList.add("animate__fadeInUp"); // Áp dụng fadeInUp cho các phần tử cần fadeInUp
-          }
-          if (entry.target.classList.contains("zoom-in-image")) {
-            entry.target.classList.add("zoom-in-active"); // Thêm lớp zoom-in-active để áp dụng hiệu ứng zoom-in
-          }
-
-          observer.unobserve(entry.target); // Chỉ áp dụng 1 lần khi phần tử vào tầm nhìn
         }
-      });
-    }, {
-      threshold: 0.3 // 30% phần tử vào tầm nhìn sẽ kích hoạt hiệu ứng
-    });
-
-    // Tìm tất cả các phần tử có lớp 'fadeIn', 'fadeInUp' hoặc 'zoom-in-image' và theo dõi chúng
-    const fadeInElements = document.querySelectorAll(".fadeIn");
-    const fadeInUpElements = document.querySelectorAll(".fadeInUp");
-    const zoomInImageElements = document.querySelectorAll(".zoom-in-image");
-
-    fadeInElements.forEach(el => observer.observe(el));
-    fadeInUpElements.forEach(el => observer.observe(el));
-    zoomInImageElements.forEach(el => observer.observe(el));
-  });
-</script>
+      
+        // Gọi hàm khi tải trang và khi thay đổi kích thước cửa sổ
+        window.addEventListener('load', toggleNavbarVisibility);
+        window.addEventListener('resize', toggleNavbarVisibility);
+      </script>
+      
+      
+    
+      
+      <script>
+       const track = document.getElementById('carousel-track');
+    let currentIndex = 0;
+    let totalOffset = 0;
+    let imagesToShow = 5; // Số lượng ảnh hiển thị mặc định
+    
+    // Hàm tính toán kích thước của từng ảnh
+    function getStepSize(index) {
+      const el = track.children[index];
+      const style = window.getComputedStyle(el);
+      const marginLeft = parseFloat(style.marginLeft);
+      const marginRight = parseFloat(style.marginRight);
+      return el.offsetWidth + marginLeft + marginRight;
+    }
+    
+    // Hàm cập nhật số lượng ảnh cần hiển thị dựa trên kích thước màn hình
+    function updateImagesToShow() {
+      const windowWidth = window.innerWidth;
+      console.log('Window Width:', windowWidth); // Debug log để kiểm tra kích thước cửa sổ
+    
+      // Điều chỉnh số lượng ảnh hiển thị tùy vào kích thước màn hình
+      if (windowWidth < 771) {
+        imagesToShow = 2; // Hiển thị 2 ảnh cho màn hình nhỏ
+      } else if (windowWidth < 991) {
+        imagesToShow = 3; // Hiển thị 3 ảnh cho màn hình dưới 991px
+      } else if (windowWidth < 1200) {
+        imagesToShow = 4; // Hiển thị 4 ảnh cho màn hình dưới 1200px
+      } else {
+        imagesToShow = 5; // Hiển thị 5 ảnh cho màn hình lớn
+      }
+    
+      console.log('Images to Show:', imagesToShow); // Debug log để kiểm tra số lượng ảnh cần hiển thị
+    
+      // Đảm bảo rằng khi thay đổi kích thước màn hình, carousel sẽ quay lại vị trí đầu
+      currentIndex = 0;
+      totalOffset = 0;
+      track.style.transition = 'none'; // Tắt hiệu ứng chuyển động khi thay đổi
+      track.style.transform = `translateX(0px)`; // Đưa carousel về đầu
+      setTimeout(() => {
+        track.style.transition = 'transform 0.2s ease-in-out'; // Bật lại hiệu ứng chuyển động
+      }, 100);
+    }
+    
+    // Hàm di chuyển carousel
+    function moveNext() {
+      const step = getStepSize(currentIndex);
+      const totalWidth = track.scrollWidth; // Tổng chiều rộng của tất cả các ảnh trong carousel
+      const visibleWidth = track.offsetWidth; // Chiều rộng của phần có thể nhìn thấy
+    
+      // Kiểm tra nếu ảnh tiếp theo không thể hiển thị đầy đủ, không di chuyển
+      if (totalOffset + visibleWidth < totalWidth) {
+        totalOffset += step;
+        currentIndex++;
+        track.style.transition = 'transform 0.2s ease-in-out';
+        track.style.transform = `translateX(-${totalOffset}px)`;
+      } else {
+        // Nếu không còn ảnh nào để hiển thị đầy đủ, quay lại đầu
+        track.style.transition = 'transform 0.3s ease-in-out';
+        track.style.transform = 'translateX(0px)';
+        currentIndex = 0;
+        totalOffset = 0;
+      }
+    }
+    
+    // Cập nhật số lượng ảnh khi cửa sổ thay đổi kích thước
+    window.addEventListener('resize', updateImagesToShow);
+    
+    // Gọi updateImagesToShow ngay khi tải trang để xác định số lượng ảnh ban đầu
+    updateImagesToShow();
+    
+    // Thiết lập vòng lặp di chuyển ảnh mỗi 5 giây
+    setInterval(moveNext, 5000); // 5 giây 1 lần
+    
+    
+    
+    
+    
+    
+      </script>
+     
+       
+    
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.remove("opacity-0"); // Xóa opacity 0 khi phần tử vào tầm nhìn
+    
+                // Kiểm tra loại phần tử và thêm hiệu ứng tương ứng
+                if (entry.target.classList.contains("fadeIn")) {
+                  entry.target.classList.add("animate__fadeIn"); // Áp dụng fadeIn cho các phần tử cần fade-in
+                }
+                if (entry.target.classList.contains("fadeInUp")) {
+                  entry.target.classList.add("animate__fadeInUp"); // Áp dụng fadeInUp cho các phần tử cần fadeInUp
+                }
+                if (entry.target.classList.contains("zoom-in-image")) {
+                  entry.target.classList.add("zoom-in-active"); // Thêm lớp zoom-in-active để áp dụng hiệu ứng zoom-in
+                }
+    
+                observer.unobserve(entry.target); // Chỉ áp dụng 1 lần khi phần tử vào tầm nhìn
+              }
+            });
+          }, {
+            threshold: 0.3 // 30% phần tử vào tầm nhìn sẽ kích hoạt hiệu ứng
+          });
+    
+          // Tìm tất cả các phần tử có lớp 'fadeIn', 'fadeInUp' hoặc 'zoom-in-image' và theo dõi chúng
+          const fadeInElements = document.querySelectorAll(".fadeIn");
+          const fadeInUpElements = document.querySelectorAll(".fadeInUp");
+          const zoomInImageElements = document.querySelectorAll(".zoom-in-image");
+    
+          fadeInElements.forEach(el => observer.observe(el));
+          fadeInUpElements.forEach(el => observer.observe(el));
+          zoomInImageElements.forEach(el => observer.observe(el));
+        });
+      </script>
 
 
 
