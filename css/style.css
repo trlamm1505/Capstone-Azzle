@@ -18,6 +18,34 @@ h2 {
   font-size: 2.25rem;
   line-height: 2.5rem;
 }
+
+@media (min-width: 992px) {
+  h2 {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+}
+
+@media (min-width: 1200px) {
+  h2 {
+    font-size: 4.5rem;
+    line-height: 1;
+  }
+}
+
+@media (min-width: 1400px) {
+  h2 {
+    font-size: 75px;
+  }
+}
+
+
+/* header */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
 .group {
   position: relative;  /* Đảm bảo phần tử nhóm có vị trí */
   z-index: 20; /* Đặt z-index cao để menu không bị che khuất */
@@ -79,6 +107,9 @@ h2 {
     display: none !important;
   }
 }
+
+
+
 
 
 
