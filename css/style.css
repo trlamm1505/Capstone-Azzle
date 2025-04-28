@@ -18,223 +18,69 @@ h2 {
   font-size: 2.25rem;
   line-height: 2.5rem;
 }
-
-@media (min-width: 992px) {
-  h2 {
-    font-size: 3.75rem;
-    line-height: 1;
-  }
+.group {
+  position: relative;  /* Đảm bảo phần tử nhóm có vị trí */
+  z-index: 20; /* Đặt z-index cao để menu không bị che khuất */
 }
 
-@media (min-width: 1200px) {
-  h2 {
-    font-size: 4.5rem;
-    line-height: 1;
-  }
-}
-
-@media (min-width: 1400px) {
-  h2 {
-    font-size: 75px;
-  }
-}
-
-/* Hero */
-.hero {
-  font-size: 115px;
-  line-height: 1;
-}
-
-.hero1 {
-  margin-top: 100px;
-}
-
-/* Đảm bảo các dropdown luôn ẩn khi không hover */
-.group>.absolute {
+.group > .absolute {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* Khi hover vào group, menu mới hiển thị */
-.group:hover>.absolute {
+
+.group > .absolute {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.group:hover > .absolute {
   opacity: 1;
   visibility: visible;
-}
-
-.image-container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  height: 100vh;
-  padding-top: 75px;
-}
-
-.opacity-0 {
-  opacity: 0;
-  pointer-events: none;
-  /* Không cho hover khi chưa hiện */
 }
 
 .show-on-scroll {
   opacity: 1 !important;
-  pointer-events: auto;
-  /* Cho hover lại sau khi hiện ra */
+  pointer-events: auto; /* Cho hover lại sau khi hiện ra */
 }
-
-/* Hiệu ứng zoom-in cho ảnh */
 .zoom-in-image {
-  transform: scale(0.8);
-  /* Khởi tạo ảnh nhỏ */
-  opacity: 0;
-  /* Ảnh ban đầu ẩn */
-  visibility: hidden;
-  /* Đảm bảo ảnh không hiển thị khi chưa vào tầm nhìn */
-  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
-  /* Tăng thời gian chuyển động để làm chậm hiệu ứng */
+  transform: scale(0.8); /* Khởi tạo ảnh nhỏ */
+  opacity: 0; /* Ảnh ban đầu ẩn */
+  visibility: hidden; /* Đảm bảo ảnh không hiển thị khi chưa vào tầm nhìn */
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out; /* Tăng thời gian chuyển động để làm chậm hiệu ứng */
 }
 
 .zoom-in-image.zoom-in-active {
-  visibility: visible;
-  /* Làm ảnh hiển thị khi vào tầm nhìn */
-  transform: scale(1);
-  /* Ảnh phóng to khi vào tầm nhìn */
-  opacity: 1;
-  /* Ảnh rõ ràng */
+  visibility: visible; /* Làm ảnh hiển thị khi vào tầm nhìn */
+  transform: scale(1); /* Ảnh phóng to khi vào tầm nhìn */
+  opacity: 1; /* Ảnh rõ ràng */
 }
-
-
-/* Fade effect cho line */
-/* @keyframes fadeInUp {
-  0% {
-    transform:
-  }} */
-
-/* .container{ 
-  margin-top: -450px;
-} */
-/* Hiệu ứng fade-in */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
+@media (max-width: 991px) {
+  /* Ẩn menu khi màn hình dưới 991px */
+  #navbar-multi-level {
+    display: none !important;
   }
 
-  100% {
-    opacity: 1;
+  /* Hiển thị menu toggle (nút 3 gạch) */
+  #menu-toggle {
+    display: block !important;
   }
 }
 
-.fade-in {
-  animation: fadeIn 1s ease-out forwards;
-  /* Hiệu ứng mờ dần khi vào tầm nhìn */
-}
-
-.animate__animated {
-  opacity: 0;
-}
-
-
-.brand-image {
-  animation: fadeIn 1s ease-out forwards;
-}
-
-.fade-in {
-  animation: fadeIn 1s ease-out forwards;
-}
-
-.header {
-  border-bottom-left-radius: 50px;
-  /* Bo góc dưới bên trái */
-  border-bottom-right-radius: 50px;
-  /* Bo góc dưới bên phải */
-}
-
-.container1 {
-  font-size: 78px;
-}
-
-.container p {
-  margin-bottom: 50px;
-}
-
-.Feature h3 {
-  font-size: 26px;
-}
-
-.Feature p {
-  font-size: 17px;
-}
-
-/* .section img {
-  margin-left: 600px;
-  margin-top: 30px;
-} */
-
-/* Sửa */
-
-.section1 h2 {
-  font-size: 75px;
-}
-
-.section1 p {
-  font-size: 20px;
-}
-
-.section2 h2 {
-  font-size: 75px;
-}
-
-.section2 {
-  margin-left: 600px;
-  margin-bottom: 100px;
-}
-
-.section2 p {
-  font-size: 20px;
-}
-
-.section2 ul {
-  font-size: x-large;
-}
-
-.section4 {
-  margin-right: 500px;
-  margin-bottom: 80px;
-}
-
-/* .image img {
-  width: 1280px;
-} */
-/* Sửa */
-
-
-@media (max-width: 2000px) {
-  /* .container {
-    margin-top: auto;
+@media (min-width: 992px) {
+  /* Hiển thị menu khi màn hình rộng hơn hoặc bằng 992px */
+  #navbar-multi-level {
+    display: flex !important;
   }
 
-  .container p {
-    margin-top: -100px;
-  }
-
-  .section img {
-    margin-left: 160px;
-    margin-top: -30px;
-  } */
-
-  /* Sửa */
-
-  .section2 {
-    margin-left: 160px;
-    margin-top: 50px;
-  }
-
-  .section4 {
-    width: 700px;
-    height: 400px;
-    margin-bottom: 180px;
+  /* Ẩn nút toggle */
+  #menu-toggle {
+    display: none !important;
   }
 }
+
+
 
 
 
